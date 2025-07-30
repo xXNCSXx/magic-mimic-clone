@@ -77,47 +77,73 @@ export const AdvancedCursor = () => {
     <>
       {/* Main cursor */}
       <div 
-        className="fixed w-4 h-4 bg-accent rounded-full pointer-events-none z-[9999] mix-blend-difference transition-transform duration-75"
+        className="fixed w-8 h-8 bg-accent rounded-full pointer-events-none z-[9999] mix-blend-difference transition-transform duration-100"
         style={{
-          left: cursorPos.x - 8,
-          top: cursorPos.y - 8,
-          transform: isMoving ? 'scale(1.5)' : 'scale(1)',
+          left: cursorPos.x - 16,
+          top: cursorPos.y - 16,
+          transform: isMoving ? 'scale(2)' : 'scale(1)',
+          boxShadow: isMoving ? '0 0 30px hsl(var(--accent) / 0.8)' : '0 0 15px hsl(var(--accent) / 0.4)'
         }}
       />
       
       {/* Cursor ring */}
       <div 
-        className="fixed w-8 h-8 border border-accent/50 rounded-full pointer-events-none z-[9998] transition-all duration-200"
+        className="fixed w-16 h-16 border-2 border-accent/40 rounded-full pointer-events-none z-[9998] transition-all duration-300"
         style={{
-          left: cursorPos.x - 16,
-          top: cursorPos.y - 16,
-          transform: isMoving ? 'scale(1.5)' : 'scale(1)',
-          opacity: isMoving ? 0.8 : 0.4
+          left: cursorPos.x - 32,
+          top: cursorPos.y - 32,
+          transform: isMoving ? 'scale(2.5)' : 'scale(1)',
+          opacity: isMoving ? 1 : 0.6
+        }}
+      />
+
+      {/* Outer ring */}
+      <div 
+        className="fixed w-24 h-24 border border-accent/20 rounded-full pointer-events-none z-[9997] transition-all duration-500"
+        style={{
+          left: cursorPos.x - 48,
+          top: cursorPos.y - 48,
+          transform: isMoving ? 'scale(1.8)' : 'scale(1)',
+          opacity: isMoving ? 0.8 : 0.3
         }}
       />
 
       {/* Trail dots */}
-      {Array.from({ length: 10 }, (_, i) => (
+      {Array.from({ length: 15 }, (_, i) => (
         <div
           key={i}
-          className="cursor-trail-dot fixed w-2 h-2 bg-accent/30 rounded-full pointer-events-none z-[9997]"
+          className="cursor-trail-dot fixed w-4 h-4 bg-accent/40 rounded-full pointer-events-none z-[9996]"
           style={{
             left: cursorPos.x,
             top: cursorPos.y,
             transform: 'translate(-50%, -50%)',
+            boxShadow: '0 0 10px hsl(var(--accent) / 0.5)'
           }}
         />
       ))}
 
       {/* Glow effect */}
       <div 
-        className="fixed w-20 h-20 pointer-events-none z-[9996]"
+        className="fixed w-40 h-40 pointer-events-none z-[9995]"
         style={{
-          left: cursorPos.x - 40,
-          top: cursorPos.y - 40,
-          background: 'radial-gradient(circle, hsl(var(--accent) / 0.1) 0%, transparent 70%)',
-          opacity: isMoving ? 1 : 0,
-          transition: 'opacity 0.3s ease'
+          left: cursorPos.x - 80,
+          top: cursorPos.y - 80,
+          background: 'radial-gradient(circle, hsl(var(--accent) / 0.2) 0%, hsl(var(--accent) / 0.05) 50%, transparent 70%)',
+          opacity: isMoving ? 1 : 0.3,
+          transition: 'opacity 0.3s ease',
+          transform: isMoving ? 'scale(1.5)' : 'scale(1)'
+        }}
+      />
+
+      {/* Additional pulse effect */}
+      <div 
+        className="fixed w-32 h-32 pointer-events-none z-[9994] animate-ping"
+        style={{
+          left: cursorPos.x - 64,
+          top: cursorPos.y - 64,
+          background: 'radial-gradient(circle, hsl(var(--accent) / 0.1) 0%, transparent 50%)',
+          opacity: isMoving ? 0.6 : 0,
+          transition: 'opacity 0.2s ease'
         }}
       />
     </>

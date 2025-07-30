@@ -38,7 +38,7 @@ export const Hero = () => {
             delay={500}
           />
           <AnimatedText 
-            text="Júnior" 
+            text="Santos" 
             className="inline-block text-accent animate-glow-pulse"
             delay={800}
           />
