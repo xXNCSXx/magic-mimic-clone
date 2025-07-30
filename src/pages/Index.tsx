@@ -4,7 +4,10 @@ import { FloatingLetters } from '@/components/FloatingLetters';
 import { LoadingScreen } from '@/components/LoadingScreen';
 import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/components/Hero';
-import { Portfolio } from '@/components/Portfolio';
+import { About } from '@/components/About';
+import { Skills } from '@/components/Skills';
+import { Projects } from '@/components/Projects';
+import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 
 const Index = () => {
@@ -35,7 +38,10 @@ const Index = () => {
         <Navigation />
         <main>
           <Hero />
-          <Portfolio />
+          <About />
+          <Skills />
+          <Projects />
+          <Contact />
         </main>
         <Footer />
       </div>

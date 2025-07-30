@@ -3,7 +3,7 @@ import { AnimatedText } from './AnimatedText';
 
 export const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background particles effect */}
       <div className="absolute inset-0">
         {[...Array(50)].map((_, i) => (
@@ -31,51 +31,32 @@ export const Hero = () => {
         </div>
 
         {/* Name */}
-        <h6 className="text-sm font-mono text-muted-foreground mb-4 animate-fade-in-up">
-          Minh Pham
-        </h6>
+        <h1 className="text-6xl md:text-8xl font-black text-highlight mb-4 animate-fade-in-up">
+          <AnimatedText 
+            text="Nilton " 
+            className="inline-block"
+            delay={500}
+          />
+          <AnimatedText 
+            text="Júnior" 
+            className="inline-block text-accent animate-glow-pulse"
+            delay={800}
+          />
+        </h1>
 
-        {/* Main hero text with animated letters */}
-        <div className="mb-8">
-          <div className="text-hero">
-            <AnimatedText 
-              text="making " 
-              className="inline-block"
-              delay={500}
-            />
-            <AnimatedText 
-              text="good " 
-              className="inline-block text-highlight animate-glow-pulse"
-              delay={800}
-            />
-            <AnimatedText 
-              text="shit " 
-              className="inline-block text-highlight animate-glow-pulse"
-              delay={1100}
-            />
-            <AnimatedText 
-              text="since 2009" 
-              className="inline-block"
-              delay={1400}
-            />
-          </div>
-        </div>
+        {/* Subtitle */}
+        <h2 className="text-xl md:text-2xl font-mono text-muted-foreground mb-6 animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
+          Estudante de Arquitetura e Urbanismo (8º Período)
+        </h2>
 
-        {/* About section */}
-        <div className="max-w-2xl mx-auto space-y-8 animate-slide-in-left">
-          <div>
-            <h3 className="text-lg font-mono text-accent mb-4">About me</h3>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm a{' '}
-              <span className="text-highlight font-bold">selectively</span>{' '}
-              <span className="text-highlight font-bold">skilled</span>{' '}
-              product designer with strong focus on producing high quality & impactful digital experience.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-mono text-accent mb-6">What i do</h3>
-          </div>
+        {/* Impact phrase */}
+        <div className="mb-12 animate-slide-in-left" style={{ animationDelay: '1.5s' }}>
+          <p className="text-lg md:text-xl text-foreground leading-relaxed max-w-3xl mx-auto">
+            <span className="text-highlight font-bold">Design</span>, {' '}
+            <span className="text-highlight font-bold">Tecnologia</span> e {' '}
+            <span className="text-highlight font-bold">Inovação</span> {' '}
+            em Cada Traço
+          </p>
         </div>
       </div>
     </section>
