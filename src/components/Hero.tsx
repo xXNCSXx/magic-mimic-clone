@@ -1,4 +1,5 @@
 import logo from '@/assets/logo.png';
+import { AnimatedText } from './AnimatedText';
 
 export const Hero = () => {
   return (
@@ -34,13 +35,31 @@ export const Hero = () => {
           Minh Pham
         </h6>
 
-        {/* Main hero text */}
-        <h1 className="text-hero mb-8 animate-fade-in-up">
-          making{' '}
-          <span className="text-highlight animate-glow-pulse">good</span>{' '}
-          <span className="text-highlight animate-glow-pulse">shit</span>{' '}
-          since 2009
-        </h1>
+        {/* Main hero text with animated letters */}
+        <div className="mb-8">
+          <div className="text-hero">
+            <AnimatedText 
+              text="making " 
+              className="inline-block"
+              delay={500}
+            />
+            <AnimatedText 
+              text="good " 
+              className="inline-block text-highlight animate-glow-pulse"
+              delay={800}
+            />
+            <AnimatedText 
+              text="shit " 
+              className="inline-block text-highlight animate-glow-pulse"
+              delay={1100}
+            />
+            <AnimatedText 
+              text="since 2009" 
+              className="inline-block"
+              delay={1400}
+            />
+          </div>
+        </div>
 
         {/* About section */}
         <div className="max-w-2xl mx-auto space-y-8 animate-slide-in-left">

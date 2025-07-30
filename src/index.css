@@ -103,7 +103,8 @@ All colors MUST be HSL for proper design token usage.
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    cursor: none; /* Custom cursor */
+    cursor: none; /* Hide default cursor for custom one */
+    overflow-x: hidden;
   }
   
   /* Custom cursor */

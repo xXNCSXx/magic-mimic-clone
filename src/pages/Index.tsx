@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { CustomCursor } from '@/components/CustomCursor';
+import { AdvancedCursor } from '@/components/AdvancedCursor';
+import { FloatingLetters } from '@/components/FloatingLetters';
 import { LoadingScreen } from '@/components/LoadingScreen';
 import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/components/Hero';
@@ -25,7 +26,8 @@ const Index = () => {
 
   return (
     <div className="relative">
-      <CustomCursor />
+      <AdvancedCursor />
+      <FloatingLetters />
       
       {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
       
