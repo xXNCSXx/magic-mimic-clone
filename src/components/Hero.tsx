@@ -47,7 +47,7 @@ export const Hero = () => {
 
         {/* Subtitle and Impact phrase with mask effect */}
         <MaskContainer
-          className="w-full min-h-[200px]"
+          className="absolute inset-0 w-full h-full"
           size={10}
           revealSize={400}
           revealText={

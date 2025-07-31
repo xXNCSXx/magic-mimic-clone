@@ -44,7 +44,7 @@ export const MaskContainer = ({
   return (
     <motion.div
       ref={containerRef}
-      className={cn("relative w-full overflow-hidden", className)}
+      className={cn("relative w-full h-full min-h-screen overflow-hidden", className)}
       animate={{
         backgroundColor: isHovered ? "transparent" : "transparent",
       }}
@@ -70,20 +70,20 @@ export const MaskContainer = ({
         }}
       >
         <div className="absolute inset-0 bg-accent/40" />
-        <div
-          onMouseEnter={() => {
-            setIsHovered(true);
-          }}
-          onMouseLeave={() => {
-            setIsHovered(false);
-          }}
-          className="relative z-30 w-full h-full flex items-center justify-center p-4"
-        >
+        <div className="relative z-30 w-full h-full flex items-center justify-center p-4">
           {children}
         </div>
       </motion.div>
 
-      <div className="relative z-10 w-full h-full flex items-center justify-center p-4">
+      <div 
+        className="relative z-10 w-full h-full flex items-center justify-center p-4"
+        onMouseEnter={() => {
+          setIsHovered(true);
+        }}
+        onMouseLeave={() => {
+          setIsHovered(false);
+        }}
+      >
         {revealText}
       </div>
     </motion.div>
