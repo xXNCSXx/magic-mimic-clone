@@ -1,12 +1,24 @@
 import { Mail, Linkedin } from 'lucide-react';
+import { MaskContainer } from './ui/svg-mask-effect';
 
 export const Contact = () => {
   return (
     <section id="contato" className="py-20 px-6 min-h-screen flex items-center">
       <div className="container mx-auto text-center">
-        <h2 className="text-4xl md:text-6xl font-black text-highlight mb-8 animate-fade-in-up">
-          Vamos Conversar?
-        </h2>
+        <MaskContainer
+          className="h-auto py-8 mb-8"
+          size={10}
+          revealSize={350}
+          revealText={
+            <h2 className="text-4xl md:text-6xl font-black text-highlight text-center">
+              Vamos Conversar?
+            </h2>
+          }
+        >
+          <h2 className="text-4xl md:text-6xl font-black text-accent text-center">
+            Vamos Conversar?
+          </h2>
+        </MaskContainer>
         
         <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed animate-slide-in-left">
           Estou sempre aberto a novas oportunidades, colaborações e discussões sobre arquitetura, 

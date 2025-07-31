@@ -1,3 +1,5 @@
+import { MaskContainer } from './ui/svg-mask-effect';
+
 export const Skills = () => {
   const skillCategories = [
     {
@@ -40,9 +42,20 @@ export const Skills = () => {
   return (
     <section id="habilidades" className="py-20 px-6 min-h-screen">
       <div className="container mx-auto">
-        <h2 className="text-4xl md:text-6xl font-black text-highlight mb-16 text-center animate-fade-in-up">
-          Habilidades
-        </h2>
+        <MaskContainer
+          className="h-auto py-8 mb-8"
+          size={10}
+          revealSize={300}
+          revealText={
+            <h2 className="text-4xl md:text-6xl font-black text-highlight text-center">
+              Habilidades
+            </h2>
+          }
+        >
+          <h2 className="text-4xl md:text-6xl font-black text-accent text-center">
+            Habilidades
+          </h2>
+        </MaskContainer>
         
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {skillCategories.map((category, categoryIndex) => (

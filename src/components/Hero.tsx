@@ -1,5 +1,6 @@
 import logo from '@/assets/logo.png';
 import { AnimatedText } from './AnimatedText';
+import { MaskContainer } from './ui/svg-mask-effect';
 
 export const Hero = () => {
   return (
@@ -44,20 +45,34 @@ export const Hero = () => {
           />
         </h1>
 
-        {/* Subtitle */}
-        <h2 className="text-xl md:text-2xl font-mono text-muted-foreground mb-6 animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
-          Estudante de Arquitetura e Urbanismo (8º Período)
-        </h2>
-
-        {/* Impact phrase */}
-        <div className="mb-12 animate-slide-in-left" style={{ animationDelay: '1.5s' }}>
-          <p className="text-lg md:text-xl text-foreground leading-relaxed max-w-3xl mx-auto">
-            <span className="text-highlight font-bold">Design</span>, {' '}
-            <span className="text-highlight font-bold">Tecnologia</span> e {' '}
-            <span className="text-highlight font-bold">Inovação</span> {' '}
-            em Cada Traço
-          </p>
-        </div>
+        {/* Subtitle and Impact phrase with mask effect */}
+        <MaskContainer
+          className="h-auto py-8"
+          size={10}
+          revealSize={400}
+          revealText={
+            <div className="text-center">
+              <h2 className="text-xl md:text-2xl font-mono text-muted-foreground mb-6">
+                Estudante de Arquitetura e Urbanismo (8º Período)
+              </h2>
+              <p className="text-lg md:text-xl text-foreground leading-relaxed max-w-3xl mx-auto">
+                <span className="text-highlight font-bold">Design</span>, {' '}
+                <span className="text-highlight font-bold">Tecnologia</span> e {' '}
+                <span className="text-highlight font-bold">Inovação</span> {' '}
+                em Cada Traço
+              </p>
+            </div>
+          }
+        >
+          <div className="text-center">
+            <h2 className="text-xl md:text-2xl font-mono text-accent mb-6">
+              Estudante de Arquitetura e Urbanismo (8º Período)
+            </h2>
+            <p className="text-lg md:text-xl text-accent leading-relaxed max-w-3xl mx-auto font-bold">
+              Design, Tecnologia e Inovação em Cada Traço
+            </p>
+          </div>
+        </MaskContainer>
       </div>
     </section>
   );

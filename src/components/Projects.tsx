@@ -1,3 +1,5 @@
+import { MaskContainer } from './ui/svg-mask-effect';
+
 export const Projects = () => {
   const projects = [
     {
@@ -41,9 +43,20 @@ export const Projects = () => {
   return (
     <section id="projetos" className="py-20 px-6 min-h-screen">
       <div className="container mx-auto">
-        <h2 className="text-4xl md:text-6xl font-black text-highlight mb-16 text-center animate-fade-in-up">
-          Projetos
-        </h2>
+        <MaskContainer
+          className="h-auto py-8 mb-8"
+          size={10}
+          revealSize={300}
+          revealText={
+            <h2 className="text-4xl md:text-6xl font-black text-highlight text-center">
+              Projetos
+            </h2>
+          }
+        >
+          <h2 className="text-4xl md:text-6xl font-black text-accent text-center">
+            Projetos
+          </h2>
+        </MaskContainer>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
