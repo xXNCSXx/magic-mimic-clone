@@ -44,16 +44,20 @@ export const MaskContainer = ({
   return (
     <motion.div
       ref={containerRef}
-      className={cn("relative w-full", className)}
+      className={cn("relative w-full overflow-hidden", className)}
       animate={{
-        backgroundColor: isHovered ? "hsl(var(--accent) / 0.1)" : "transparent",
+        backgroundColor: isHovered ? "transparent" : "transparent",
       }}
       transition={{
         backgroundColor: { duration: 0.3 },
       }}
     >
       <motion.div
-        className="absolute inset-0 flex items-center justify-center bg-background text-foreground [mask-image:url(/mask.svg)] [mask-repeat:no-repeat] [mask-size:40px] z-10"
+        className="absolute inset-0 w-full h-full flex items-center justify-center bg-background text-foreground [mask-image:url(/mask.svg)] [mask-repeat:no-repeat] [mask-size:40px] z-20"
+        style={{
+          maskComposite: "intersect",
+          WebkitMaskComposite: "intersect",
+        }}
         animate={{
           maskPosition: `${mousePosition.x - maskSize / 2}px ${
             mousePosition.y - maskSize / 2
@@ -65,7 +69,7 @@ export const MaskContainer = ({
           maskPosition: { duration: 0.15, ease: "linear" },
         }}
       >
-        <div className="absolute inset-0 bg-accent/30" />
+        <div className="absolute inset-0 bg-accent/40" />
         <div
           onMouseEnter={() => {
             setIsHovered(true);
@@ -73,13 +77,13 @@ export const MaskContainer = ({
           onMouseLeave={() => {
             setIsHovered(false);
           }}
-          className="relative z-20 w-full h-full flex items-center justify-center p-4"
+          className="relative z-30 w-full h-full flex items-center justify-center p-4"
         >
           {children}
         </div>
       </motion.div>
 
-      <div className="relative z-0 w-full h-full flex items-center justify-center p-4">
+      <div className="relative z-10 w-full h-full flex items-center justify-center p-4">
         {revealText}
       </div>
     </motion.div>

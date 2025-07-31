@@ -43,16 +43,16 @@ export const Skills = () => {
     <section id="habilidades" className="py-20 px-6 min-h-screen">
       <div className="container mx-auto">
         <MaskContainer
-          className="h-auto py-8 mb-8"
+          className="w-full min-h-[120px] mb-8"
           size={10}
           revealSize={300}
           revealText={
-            <h2 className="text-4xl md:text-6xl font-black text-highlight text-center">
+            <h2 className="text-4xl md:text-6xl font-black text-highlight text-center w-full">
               Habilidades
             </h2>
           }
         >
-          <h2 className="text-4xl md:text-6xl font-black text-accent text-center">
+          <h2 className="text-4xl md:text-6xl font-black text-accent text-center w-full">
             Habilidades
           </h2>
         </MaskContainer>

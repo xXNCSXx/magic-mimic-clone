@@ -47,11 +47,11 @@ export const Hero = () => {
 
         {/* Subtitle and Impact phrase with mask effect */}
         <MaskContainer
-          className="h-auto py-8"
+          className="w-full min-h-[200px]"
           size={10}
           revealSize={400}
           revealText={
-            <div className="text-center">
+            <div className="text-center w-full">
               <h2 className="text-xl md:text-2xl font-mono text-muted-foreground mb-6">
                 Estudante de Arquitetura e Urbanismo (8º Período)
               </h2>
@@ -64,7 +64,7 @@ export const Hero = () => {
             </div>
           }
         >
-          <div className="text-center">
+          <div className="text-center w-full">
             <h2 className="text-xl md:text-2xl font-mono text-accent mb-6">
               Estudante de Arquitetura e Urbanismo (8º Período)
             </h2>
