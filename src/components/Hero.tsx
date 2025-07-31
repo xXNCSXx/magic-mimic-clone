@@ -53,7 +53,7 @@ export const Hero = () => {
           revealText={
             <div className="text-center w-full">
               <h2 className="text-xl md:text-2xl font-mono text-muted-foreground mb-6">
-                Estudante de Arquitetura e Urbanismo (8º Período)
+                Estudante de Matemática
               </h2>
               <p className="text-lg md:text-xl text-foreground leading-relaxed max-w-3xl mx-auto">
                 <span className="text-highlight font-bold">Design</span>, {' '}
