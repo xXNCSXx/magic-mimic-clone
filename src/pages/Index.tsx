@@ -28,15 +28,15 @@ const Index = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative min-h-screen flex flex-col">
       <AdvancedCursor />
       <FloatingLetters />
       
       {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
       
-      <div className={`transition-opacity duration-1000 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+      <div className={`flex-1 flex flex-col transition-opacity duration-1000 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
         <Navigation />
-        <main>
+        <main className="flex-1">
           <Hero />
           <About />
           <Skills />

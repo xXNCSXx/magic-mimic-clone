@@ -101,12 +101,23 @@ All colors MUST be HSL for proper design token usage.
 
   html {
     scroll-behavior: smooth;
+    height: 100%;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
     cursor: none; /* Hide default cursor for custom one */
     overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
   
   /* Custom cursor */
